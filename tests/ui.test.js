@@ -56,3 +56,42 @@ test('Verify Register link text', async ({ page }) => {
 });
 
 
+test('Verify valid user can login', async ({ page }) => {
+
+    await page.goto('http://localhost:3000');
+    await page.waitForSelector('nav.navbar');
+
+   //Navigate to login page
+
+    const loginLink = await page.$('a[href="/login"]');
+     
+    await loginLink.click();
+
+
+    //Fill the user data 
+    await page.fill('#email', 'peter@abv.bg');
+    await page.fill('#password', '123456');
+
+    //click on login btn
+    const loginBtn = await page.$('#login-form > fieldset > input');
+    await loginBtn.click();
+
+    //Verify the logout btn is present
+
+   // await page.waitForURL('http://localhost:3000/catalog');
+
+    const logoutBtn = await page.$('#logoutBtn'); 
+    const logoutBtnText= await logoutBtn.textContent();
+
+    
+    expect(logoutBtnText).toEqual("Logout");
+
+
+
+
+});
+
+
+
+
+
