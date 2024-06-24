@@ -4,7 +4,6 @@
     "description": "Online Book Library Single Page Application",
     "main": "index.html",
     "scripts": {
-    
         "test:ui": "npx playwright test tests/ui.test.js",
         "test:ui-debug": "npx playwright test tests/ui.test.js --ui",
         "start": "concurrently \"npm run start-be\" \"npm run start-fe\"",
@@ -21,8 +20,8 @@
     "devDependencies": {
         "@playwright/test": "^1.44.1",
         "chai": "4.3.4",
-        "http-server": "0.12.3",
-        "mocha": "8.3.2",
+        "http-server": "^14.1.1",
+        "mocha": "^10.4.0",
         "playwright-chromium": "1.9.2"
     }
 }
