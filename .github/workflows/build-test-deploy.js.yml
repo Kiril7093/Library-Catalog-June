@@ -23,9 +23,12 @@ jobs:
 
     - name: Install npm dependencies
       run: npm install
-    - name: Start the backend 
+    - name: Start the BackEnd 
       run: npm run start-be & 
-    - name: Start the frontend
+    - name: Start the FrontEnd
       run: npm run start-fe &
+
+    - name: Install Playright Browsers
+      run: npx playwright install 
     - name: Start the UI test 
       run: npm run test:ui
